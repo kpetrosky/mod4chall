@@ -52,7 +52,7 @@ function setTime() {
     // Sets interval in variable
     timerInterval = setInterval(function () {
         secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+        timeEl.textContent = secondsLeft + " Gameover !";
 
         if (secondsLeft <= 0) {
             // Stops execution of action at set interval
@@ -76,7 +76,9 @@ var choices = document.querySelector ("#choices");
 //on click button javascript 
 //attached to on click function to check answers
 //append html
-
+for (let i = 0; i < timeEl.length; i++) {
+    text += time[i] + "<h1>";
+  }
 }
 
 // Function to create and append colorsplosion image

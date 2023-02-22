@@ -20,21 +20,42 @@
 
 var quizArray = [
     {
-        question: "What is....",
+        question: "1.What is....",
         possibleAnswers: ["a", "b", "c", "d"],
         correctAnswer: "b"
 
 
     },
     {
-        question: "What is....",
+        question: "2.What is....",
         possibleAnswers: ["a", "b", "c", "d"],
         correctAnswer: "b"
 
 
-    }
+    },
+    {
+        question: "3.What is....",
+        possibleAnswers: ["a", "b", "c", "d"],
+        correctAnswer: "b"
+
+
+    },
+    {
+        question: "4.What is....",
+        possibleAnswers: ["a", "b", "c", "d"],
+        correctAnswer: "b"
+
+
+    },
+    {
+        question: "6.What is....",
+        possibleAnswers: ["a", "b", "c", "d"],
+        correctAnswer: "b"
+
+
+    },
 ]
-var questionNumber = 0; 
+var questionNumber = 0;
 //game number
 
 
@@ -52,7 +73,7 @@ function setTime() {
     // Sets interval in variable
     timerInterval = setInterval(function () {
         secondsLeft--;
-        timeEl.textContent = secondsLeft + " Gameover !";
+        timeEl.textContent = secondsLeft + " Until Gameover !";
 
         if (secondsLeft <= 0) {
             // Stops execution of action at set interval
@@ -64,29 +85,48 @@ function setTime() {
 
     }, 1000);
 }
+var index = 0;
 
-function displayQuestion() {
-var display = document.querySelector("#display");
-display.textContent = quizArray [questionNumber].question
+
+
 //this is the driving directiosn for the array
-var choices = document.querySelector ("#choices");
+// var choices = document.querySelector("#choices");
+
 //for loop to loop through possible answers and create a button each one
 //create element (method to do ln 73)
 //add text content
 //on click button javascript 
 //attached to on click function to check answers
 //append html
-for (let i = 0; i < timeEl.length; i++) {
-    text += time[i] + "<h1>";
-  }
-}
+// for (let i = 0; i < timeEl.length; i++) {
+//     text += time[i] + "<h1>";
+//   }
+// }
+
+
+// function countSelected(selectObject) {
+//     var possibleAnswers = document.querySelector("#answers");
+//     let numberSelected = 0;
+//     for (let i = 0; i < selectObject.options.length; i++) {
+//         if (selectObject.options[i].selected) {
+//             numberSelected++;
+//         }
+//     }
+//     return numberSelected;
+// }
+
+
+
+// btn.addEventListener("click", () => {
+//     console.log(`You have selected ${countSelected(possibleAnswers)} option(s).`);
+// });
 
 // Function to create and append colorsplosion image
 // function sendMessage() {
 //     timeEl.textContent = " ";
 //     var imgEl = document.createElement("img");
 //     imgEl.setAttribute("src", "images/image_1.jpg");
-//     mainEl.appendChild(imgEl);
+
 
 // }
 
@@ -113,6 +153,7 @@ for (let i = 0; i < timeEl.length; i++) {
 //         setCounterText();
 //     }
 // });
+
 // function keydownAction(event) {
 //     // The key property holds the value of the key press
 //     var keyPress = event.key;
@@ -160,7 +201,7 @@ for (let i = 0; i < timeEl.length; i++) {
 //         // TODO: Save email and password to localStorage and render the last registered user
 //     }
 // });
-
+// var btn = document.getElementById("buttons");
 
 startButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -168,4 +209,91 @@ startButton.addEventListener("click", function (event) {
     displayQuestion();
 })
 
+// nextButton.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     displayQuestion();
+// })
+var possibleAnswers = document.querySelector('#possibleAnswers');
 
+possibleAnswers.addEventListener("click", function (event) {
+    event.preventDefault();
+    displayQuestion();
+
+    var buttonA = document.createElement('button');
+    buttonA.setAttribute('value', 'A');
+    buttonA.textContent = 'A';
+    possibleAnswers.appendChild(buttonA);
+
+    var buttonB = document.createElement('button');
+    buttonB.setAttribute('value', 'B');
+    buttonB.textContent = 'B';
+    possibleAnswers.appendChild(buttonB);
+
+    var buttonC = document.createElement('button');
+    buttonC.setAttribute('value', 'C');
+    buttonC.textContent = 'C';
+    possibleAnswers.appendChild(buttonC);
+
+    var buttonD = document.createElement('button');
+    buttonD.setAttribute('value', 'D');
+    buttonD.textContent = 'D';
+    possibleAnswers.appendChild(buttonD);
+});
+
+
+// Access element using id
+// var articlesDiv = document.getElementById('articles');
+// var headerDiv = document.getElementById('header');
+
+// Change style by accessing style object's properties
+// articlesDiv.children[0].style.fontSize = '250px';
+// headerDiv.children[1].style.color = 'black';
+
+
+//  Selects carousel element
+// var carousel = document.querySelector(".carouselbox");
+
+
+// function navigate(direction) {
+//     // Remove the "selected" class from all buttons
+//     btn.forEach(function (button) {
+//         button.classList.remove("selected");
+//     });
+
+//     // Update the index and wrap around if necessary
+//     index += direction;
+//     if (index < 0) {
+//         index = btn.length - 1;
+//     } else if (index >= btn.length) {
+//         index = 0;
+//     }
+
+//     // Add the "selected" class to the currently selected button
+//     buttons = btn[index];
+//     buttons.classList.add("selected");
+// }
+
+
+
+
+// Clicking on image opens a new window containing the image
+// carousel.addEventListener("click", function () {
+//     window.location.href = images[index];
+// });
+
+// Clicking on next button displays next image in carousel
+// next.addEventListener("click", function (event) {
+//     // Stops event from bubbling up and new window opening
+//     event.stopPropagation();
+//     navigate(1);
+// });
+
+// Clicking previous displays previous image in carousel
+// prev.addEventListener("click", function (event) {
+//     // Event bubbling would occur and a new window would open if we did not include the following line of code.
+//     event.stopPropagation();
+
+//     navigate(-1);
+// });
+
+// navigate(0);
